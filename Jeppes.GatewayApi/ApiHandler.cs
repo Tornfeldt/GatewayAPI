@@ -100,7 +100,7 @@ namespace Jeppes.GatewayApi
 
         private RestClient CreateRestClient()
         {
-            var restClient = new RestClient(_settings.ApiToken);
+            var restClient = new RestClient(_settings.Url);
             restClient.Authenticator = new RestSharp.Authenticators.HttpBasicAuthenticator(_settings.ApiToken, "");
             return restClient;
         }
