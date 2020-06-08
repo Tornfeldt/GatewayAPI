@@ -9,19 +9,19 @@ namespace Jeppes.GatewayApi
     [JsonConverter(typeof(PhoneNumberJsonConverter))]
     public class PhoneNumber : IEquatable<PhoneNumber>
     {
-        private PhoneNumber(CountryPrefix countryPrefix, string phoneNumberWithoutPrefix)
+        private PhoneNumber(CountryInfo country, string phoneNumberWithoutPrefix)
         {
-            CountryPrefix = countryPrefix;
+            Country = country;
             PhoneNumberWithoutPrefix = phoneNumberWithoutPrefix;
         }
 
         public long ConvertToMSISDN()
         {
-            var phoneNumberString = CountryPrefix.CountryPhoneCode + PhoneNumberWithoutPrefix;
+            var phoneNumberString = Country.PhonePrefix + PhoneNumberWithoutPrefix;
             return long.Parse(phoneNumberString);
         }
 
-        public CountryPrefix CountryPrefix { get; }
+        public CountryInfo Country { get; }
 
         public string PhoneNumberWithoutPrefix { get; }
 
@@ -33,14 +33,14 @@ namespace Jeppes.GatewayApi
         public bool Equals(PhoneNumber other)
         {
             return other != null &&
-                   EqualityComparer<CountryPrefix>.Default.Equals(CountryPrefix, other.CountryPrefix) &&
+                   EqualityComparer<CountryInfo>.Default.Equals(Country, other.Country) &&
                    PhoneNumberWithoutPrefix == other.PhoneNumberWithoutPrefix;
         }
 
         public override int GetHashCode()
         {
             var hashCode = 254555775;
-            hashCode = hashCode * -1521134295 + EqualityComparer<CountryPrefix>.Default.GetHashCode(CountryPrefix);
+            hashCode = hashCode * -1521134295 + EqualityComparer<CountryInfo>.Default.GetHashCode(Country);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PhoneNumberWithoutPrefix);
             return hashCode;
         }
@@ -58,14 +58,14 @@ namespace Jeppes.GatewayApi
 
         public static PhoneNumber Create(string phoneNumber)
         {
-            var prefix = CountryPrefixFactory.CreateFromPhoneNumber(phoneNumber, out var phoneNumberWithoutPrefix);
-            return new PhoneNumber(prefix, phoneNumberWithoutPrefix);
+            var countryInfo = CountryInfoFactory.CreateFromPhoneNumber(phoneNumber, out var phoneNumberWithoutPrefix);
+            return new PhoneNumber(countryInfo, phoneNumberWithoutPrefix);
         }
 
         public static PhoneNumber Create(long phoneNumber)
         {
-            var prefix = CountryPrefixFactory.CreateFromPhoneNumber(phoneNumber, out var phoneNumberWithoutPrefix);
-            return new PhoneNumber(prefix, phoneNumberWithoutPrefix);
+            var countryInfo = CountryInfoFactory.CreateFromPhoneNumber(phoneNumber, out var phoneNumberWithoutPrefix);
+            return new PhoneNumber(countryInfo, phoneNumberWithoutPrefix);
         }
     }
 }

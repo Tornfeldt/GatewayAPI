@@ -12,17 +12,17 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void FindCorrectCountryPrefixFromCountryName()
         {
-            var d = new Dictionary<string, CountryPrefix>
+            var d = new Dictionary<string, CountryInfo>
             {
-                { "DK", CountryPrefixes.DK },
-                { "No", CountryPrefixes.NO },
-                { "uS", CountryPrefixes.US },
-                { "gb", CountryPrefixes.GB }
+                { "DK", CountryInfos.DK },
+                { "No", CountryInfos.NO },
+                { "uS", CountryInfos.US },
+                { "gb", CountryInfos.GB }
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromShortCountryName(testCase.Key);
+                var result = CountryInfoFactory.CreateFromCountryNameAbbr(testCase.Key);
                 Assert.Equal(testCase.Value, result);
             }
         }
@@ -30,17 +30,17 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void DoNotFindCountryPrefixFromCountryName()
         {
-            var d = new Dictionary<string, CountryPrefix>
+            var d = new Dictionary<string, CountryInfo>
             {
-                { "No", CountryPrefixes.DK },
-                { "DK", CountryPrefixes.NO },
-                { "gb", CountryPrefixes.US },
-                { "uS", CountryPrefixes.GB }
+                { "No", CountryInfos.DK },
+                { "DK", CountryInfos.NO },
+                { "gb", CountryInfos.US },
+                { "uS", CountryInfos.GB }
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromShortCountryName(testCase.Key);
+                var result = CountryInfoFactory.CreateFromCountryNameAbbr(testCase.Key);
                 Assert.NotEqual(testCase.Value, result);
             }
         }
@@ -48,17 +48,17 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void FindCountryPrefixFromCountryPhonePrefix()
         {
-            var d = new Dictionary<int, CountryPrefix>
+            var d = new Dictionary<int, CountryInfo>
             {
-                { 45, CountryPrefixes.DK },
-                { 47, CountryPrefixes.NO },
-                { 1, CountryPrefixes.NORTHAMERICA },
-                { 44, CountryPrefixes.GB }
+                { 45, CountryInfos.DK },
+                { 47, CountryInfos.NO },
+                { 1, CountryInfos.NORTHAMERICA },
+                { 44, CountryInfos.GB }
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromCountryPhoneCode(testCase.Key);
+                var result = CountryInfoFactory.CreateFromCountryPhoneCode(testCase.Key);
                 Assert.Equal(testCase.Value, result);
             }
         }
@@ -66,19 +66,19 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void DoNotFindCountryPrefixFromCountryPhonePrefix()
         {
-            var d = new Tuple<int, CountryPrefix>[]
+            var d = new Tuple<int, CountryInfo>[]
             {
-                new Tuple<int, CountryPrefix>(47, CountryPrefixes.DK),
-                new Tuple<int, CountryPrefix>(45, CountryPrefixes.NO),
-                new Tuple<int, CountryPrefix>(44, CountryPrefixes.NORTHAMERICA),
-                new Tuple<int, CountryPrefix>(1, CountryPrefixes.GB),
-                new Tuple<int, CountryPrefix>(1, CountryPrefixes.US),
-                new Tuple<int, CountryPrefix>(1, CountryPrefixes.CA)
+                new Tuple<int, CountryInfo>(47, CountryInfos.DK),
+                new Tuple<int, CountryInfo>(45, CountryInfos.NO),
+                new Tuple<int, CountryInfo>(44, CountryInfos.NORTHAMERICA),
+                new Tuple<int, CountryInfo>(1, CountryInfos.GB),
+                new Tuple<int, CountryInfo>(1, CountryInfos.US),
+                new Tuple<int, CountryInfo>(1, CountryInfos.CA)
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromCountryPhoneCode(testCase.Item1);
+                var result = CountryInfoFactory.CreateFromCountryPhoneCode(testCase.Item1);
                 Assert.NotEqual(testCase.Item2, result);
             }
         }
@@ -86,19 +86,19 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void FindCountryPrefixFromStringCountryPhonePrefix()
         {
-            var d = new Dictionary<string, CountryPrefix>
+            var d = new Dictionary<string, CountryInfo>
             {
-                { "45", CountryPrefixes.DK },
-                { "0045", CountryPrefixes.DK },
-                { "+45", CountryPrefixes.DK },
-                { "1", CountryPrefixes.NORTHAMERICA },
-                { "001", CountryPrefixes.NORTHAMERICA },
-                { "+1", CountryPrefixes.NORTHAMERICA }
+                { "45", CountryInfos.DK },
+                { "0045", CountryInfos.DK },
+                { "+45", CountryInfos.DK },
+                { "1", CountryInfos.NORTHAMERICA },
+                { "001", CountryInfos.NORTHAMERICA },
+                { "+1", CountryInfos.NORTHAMERICA }
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromCountryPhoneCode(testCase.Key);
+                var result = CountryInfoFactory.CreateFromCountryPhonePrefix(testCase.Key);
                 Assert.Equal(testCase.Value, result);
             }
         }
@@ -106,16 +106,16 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void CreateFromPhoneNumberInt()
         {
-            var d = new Tuple<long, CountryPrefix, string>[]
+            var d = new Tuple<long, CountryInfo, string>[]
             {
-                new Tuple<long, CountryPrefix, string>(4529641389, CountryPrefixes.DK, "29641389"),
-                new Tuple<long, CountryPrefix, string>(129641389, CountryPrefixes.NORTHAMERICA, "29641389"),
-                new Tuple<long, CountryPrefix, string>(448888888888, CountryPrefixes.GB, "8888888888"),
+                new Tuple<long, CountryInfo, string>(4529641389, CountryInfos.DK, "29641389"),
+                new Tuple<long, CountryInfo, string>(129641389, CountryInfos.NORTHAMERICA, "29641389"),
+                new Tuple<long, CountryInfo, string>(448888888888, CountryInfos.GB, "8888888888"),
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromPhoneNumber(testCase.Item1, out var phoneNumber);
+                var result = CountryInfoFactory.CreateFromPhoneNumber(testCase.Item1, out var phoneNumber);
                 Assert.Equal(testCase.Item2, result);
                 Assert.Equal(testCase.Item3, phoneNumber);
             }
@@ -124,22 +124,22 @@ namespace Jeppes.GatewayApi.Tests
         [Fact]
         public void CreateFromPhoneNumberString()
         {
-            var d = new Tuple<string, CountryPrefix, string>[]
+            var d = new Tuple<string, CountryInfo, string>[]
             {
-                new Tuple<string, CountryPrefix, string>("4529641389", CountryPrefixes.DK, "29641389"),
-                new Tuple<string, CountryPrefix, string>("004529641389", CountryPrefixes.DK, "29641389"),
-                new Tuple<string, CountryPrefix, string>("+4529641389", CountryPrefixes.DK, "29641389"),
-                new Tuple<string, CountryPrefix, string>("00129641389", CountryPrefixes.NORTHAMERICA, "29641389"),
-                new Tuple<string, CountryPrefix, string>("+129641389", CountryPrefixes.NORTHAMERICA, "29641389"),
-                new Tuple<string, CountryPrefix, string>("129641389", CountryPrefixes.NORTHAMERICA, "29641389"),
-                new Tuple<string, CountryPrefix, string>("448888888888", CountryPrefixes.GB, "8888888888"),
-                new Tuple<string, CountryPrefix, string>("00448888888888", CountryPrefixes.GB, "8888888888"),
-                new Tuple<string, CountryPrefix, string>("+448888888888", CountryPrefixes.GB, "8888888888"),
+                new Tuple<string, CountryInfo, string>("4529641389", CountryInfos.DK, "29641389"),
+                new Tuple<string, CountryInfo, string>("004529641389", CountryInfos.DK, "29641389"),
+                new Tuple<string, CountryInfo, string>("+4529641389", CountryInfos.DK, "29641389"),
+                new Tuple<string, CountryInfo, string>("00129641389", CountryInfos.NORTHAMERICA, "29641389"),
+                new Tuple<string, CountryInfo, string>("+129641389", CountryInfos.NORTHAMERICA, "29641389"),
+                new Tuple<string, CountryInfo, string>("129641389", CountryInfos.NORTHAMERICA, "29641389"),
+                new Tuple<string, CountryInfo, string>("448888888888", CountryInfos.GB, "8888888888"),
+                new Tuple<string, CountryInfo, string>("00448888888888", CountryInfos.GB, "8888888888"),
+                new Tuple<string, CountryInfo, string>("+448888888888", CountryInfos.GB, "8888888888"),
             };
 
             foreach (var testCase in d)
             {
-                var result = CountryPrefixFactory.CreateFromPhoneNumber(testCase.Item1, out var phoneNumber);
+                var result = CountryInfoFactory.CreateFromPhoneNumber(testCase.Item1, out var phoneNumber);
                 Assert.Equal(testCase.Item2, result);
                 Assert.Equal(testCase.Item3, phoneNumber);
             }
@@ -152,7 +152,7 @@ namespace Jeppes.GatewayApi.Tests
 
             foreach (var testCase in d)
             {
-                Assert.Throws<PhoneNumberNotValidException>(() => CountryPrefixFactory.CreateFromPhoneNumber(testCase, out var phoneNumber));
+                Assert.Throws<PhoneNumberNotValidException>(() => CountryInfoFactory.CreateFromPhoneNumber(testCase, out var phoneNumber));
             }
         }
     }
