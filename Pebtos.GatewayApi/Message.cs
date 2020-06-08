@@ -116,6 +116,6 @@ namespace Pebtos.GatewayApi
         /// This property is required.
         /// </summary>
         [JsonPropertyName("recipients")]
-        public Recipient[] Recipients { get; set; }
+        public IReadOnlyCollection<Recipient> Recipients { get; set; }
     }
 }

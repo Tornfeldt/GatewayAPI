@@ -1,4 +1,5 @@
-﻿using Pebtos.GatewayApi.JsonConverters;
+﻿using Pebtos.GatewayApi.Exceptions;
+using Pebtos.GatewayApi.JsonConverters;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -66,6 +67,22 @@ namespace Pebtos.GatewayApi
         {
             var countryInfo = CountryInfoFactory.CreateFromPhoneNumber(phoneNumber, out var phoneNumberWithoutPrefix);
             return new PhoneNumber(countryInfo, phoneNumberWithoutPrefix);
+        }
+
+        public static PhoneNumber Create(CountryInfo country, string phoneNumberWithoutPrefix)
+        {
+            if (country == null)
+                throw new ArgumentNullException(nameof(country), $"Country info cannot be null when creating a phone number.");
+
+            if (string.IsNullOrWhiteSpace(phoneNumberWithoutPrefix))
+                throw new PhoneNumberNotValidException(nameof(phoneNumberWithoutPrefix), phoneNumberWithoutPrefix);
+
+            phoneNumberWithoutPrefix = phoneNumberWithoutPrefix.Trim();
+
+            if (!long.TryParse(phoneNumberWithoutPrefix, out var _))
+                throw new PhoneNumberNotValidException(nameof(phoneNumberWithoutPrefix), phoneNumberWithoutPrefix);
+
+            return new PhoneNumber(country, phoneNumberWithoutPrefix);
         }
     }
 }
