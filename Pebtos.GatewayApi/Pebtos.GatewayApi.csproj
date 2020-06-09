@@ -18,7 +18,7 @@
     <RepositoryUrl></RepositoryUrl>
     <Description>This package is an API wrapper for the SMS gateway GatewayAPI.com. This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.
 
-If you want to use this wrapper, then go to GatewayAPI.com, create an account, buy come credit and find your private API token.</Description>
+If you want to use this wrapper, then go to GatewayAPI.com, create an account, buy some credit and find your private API token.</Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

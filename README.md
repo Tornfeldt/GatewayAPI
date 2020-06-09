@@ -19,7 +19,7 @@ API handler for SMS gateway GatewayAPI.
 This project is an API handler or API wrapper of the SMS gateway GatewayAPI.com.
 This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.
 
-If you want to use this wrapper, then go to GatewayAPI.com, create an account, buy come credit and find your private API token.
+If you want to use this wrapper, then go to GatewayAPI.com, create an account, buy some credit and find your private API token.
 
 Documentation used when creating this wrapper can be found here: https://gatewayapi.com/docs
 
