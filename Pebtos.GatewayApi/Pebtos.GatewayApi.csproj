@@ -12,7 +12,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Authors>Jeppe Tornfeldt Sørensen</Authors>
-    <Version>0.1.0-alpha.1</Version>
+    <Version>0.1.0-alpha.3</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Tornfeldt/GatewayAPI</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
