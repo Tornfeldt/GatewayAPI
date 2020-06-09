@@ -37,6 +37,7 @@ jobs:
       run: dotnet pack Pebtos.GatewayApi --configuration Release
     - name: Push package to nuget.org
       run: dotnet nuget push **/Pebtos.GatewayApi.*.nupkg
+            --skip-duplicate
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
             --source https://api.nuget.org/v3/index.json
     
