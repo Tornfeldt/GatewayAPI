@@ -1,7 +1,21 @@
+![.NET Core](https://github.com/Tornfeldt/GatewayAPI/workflows/.NET%20Core/badge.svg?branch=master)
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Pebtos.GatewayAPI)
+
 # GatewayAPI
 API handler for SMS gateway GatewayAPI.
 
-## Introduction
+# Table of contents
+
+- [GatewayAPI](#gatewayapi)
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Caveats](#caveats)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Sending SMS](#sending-sms)
+
+
+# Introduction
 This project is an API handler or API wrapper of the SMS gateway GatewayAPI.com.
 This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.
 
@@ -9,7 +23,7 @@ If you want to use this wrapper, then go to GatewayAPI.com, create an account, b
 
 Documentation used when creating this wrapper can be found here: https://gatewayapi.com/docs
 
-## Caveats
+# Caveats
 This is very much an alpha release and there might be things that do not work...
 
 Not all functionality has been implemented. Here is some of the things which has not implemented:
@@ -20,11 +34,11 @@ Not all functionality has been implemented. Here is some of the things which has
 * Check account balance
 * Get prices
 
-## Installation
-A NuGet package should be ready soon...
+# Installation
+Install NuGet package [Pebtos.GatewayApi](https://www.nuget.org/packages/Pebtos.GatewayApi/)
 
-## Usage
-### Sending SMS
+# Usage
+## Sending SMS
 First we need to create a recipient of the SMS we want to send.
 
 ```C#
