@@ -25,7 +25,7 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
 
 
-  build:
+  deploy:
   
     needs: build
     
