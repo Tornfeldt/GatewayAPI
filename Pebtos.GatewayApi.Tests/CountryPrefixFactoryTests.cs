@@ -10,12 +10,6 @@ namespace Pebtos.GatewayApi.Tests
     public class CountryPrefixFactoryTests
     {
         [Fact]
-        public void TestBadTest()
-        {
-            Assert.Equal(1, 2);
-        }
-
-        [Fact]
         public void FindCorrectCountryPrefixFromCountryName()
         {
             var d = new Dictionary<string, CountryInfo>
