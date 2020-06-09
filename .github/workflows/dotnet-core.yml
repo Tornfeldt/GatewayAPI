@@ -23,3 +23,20 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+
+
+  build:
+  
+    needs: build
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Pack NuGet package
+      run: dotnet pack Pebtos.GatewayApi --configuration Release
+    - name: Push package to nuget.org
+      run: dotnet nuget push **/Pebtos.GatewayApi.*.nupkg
+            --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
+            --source https://api.nuget.org/v3/index.json
+    

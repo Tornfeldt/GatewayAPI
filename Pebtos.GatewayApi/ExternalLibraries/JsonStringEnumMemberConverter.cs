@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace System.Text.Json.Serialization
 {
+#nullable enable
 	/// <summary>
 	/// <see cref="JsonConverterFactory"/> to convert enums to and from strings, respecting <see cref="EnumMemberAttribute"/> decorations. Supports nullable enums.
 	/// Borrowed from https://github.com/Macross-Software/core/tree/develop/ClassLibraries/Macross.Json.Extensions
