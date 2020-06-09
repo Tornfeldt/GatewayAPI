@@ -1,4 +1,4 @@
-name: Build & deploy master branch
+name: Build & deploy
 
 on:
   push:

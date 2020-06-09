@@ -1,4 +1,4 @@
-![.NET Core](https://github.com/Tornfeldt/GatewayAPI/workflows/.NET%20Core/badge.svg?branch=master)
+![.NET Core](https://github.com/Tornfeldt/GatewayAPI/workflows/Build%20&%20deploy/badge.svg?branch=master)
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Pebtos.GatewayAPI)
 
 # GatewayAPI
