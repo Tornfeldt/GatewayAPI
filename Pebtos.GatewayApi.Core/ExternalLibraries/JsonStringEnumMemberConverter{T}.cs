@@ -7,7 +7,7 @@ namespace System.Text.Json.Serialization
 {
 #nullable enable
 #pragma warning disable CA1812 // Remove class never instantiated
-	internal class JsonStringEnumMemberConverter<T> : JsonConverter<T>
+	public class JsonStringEnumMemberConverter<T> : JsonConverter<T>
 #pragma warning restore CA1812 // Remove class never instantiated
 	{
 		private const BindingFlags EnumBindings = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static;

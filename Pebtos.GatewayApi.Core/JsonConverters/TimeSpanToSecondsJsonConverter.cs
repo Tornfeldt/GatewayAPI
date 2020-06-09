@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi.JsonConverters
+namespace Pebtos.GatewayApi.Core.JsonConverters
 {
     public class TimeSpanToSecondsJsonConverter : JsonConverter<TimeSpan?>
     {

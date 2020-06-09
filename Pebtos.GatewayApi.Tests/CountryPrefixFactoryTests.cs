@@ -1,4 +1,6 @@
-﻿using Pebtos.GatewayApi.Exceptions;
+﻿using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Core.Exceptions;
+using Pebtos.GatewayApi.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

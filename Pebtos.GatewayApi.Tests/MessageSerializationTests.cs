@@ -1,3 +1,5 @@
+using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Core.Helpers;
 using Pebtos.GatewayApi.Helpers;
 using System;
 using System.Text.Json;

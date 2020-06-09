@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi", "Pebtos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.Tests", "Pebtos.GatewayApi.Tests\Pebtos.GatewayApi.Tests.csproj", "{5F83BE63-6150-4263-9925-8F3D26E58146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pebtos.GatewayApi.ConsoleTester", "Pebtos.GatewayApi.ConsoleTester\Pebtos.GatewayApi.ConsoleTester.csproj", "{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.ConsoleTester", "Pebtos.GatewayApi.ConsoleTester\Pebtos.GatewayApi.ConsoleTester.csproj", "{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pebtos.GatewayApi.Webhook", "Pebtos.GatewayApi.Webhook\Pebtos.GatewayApi.Webhook.csproj", "{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pebtos.GatewayApi.Core", "Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj", "{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Core
 {
     public abstract class MessageSender
     {

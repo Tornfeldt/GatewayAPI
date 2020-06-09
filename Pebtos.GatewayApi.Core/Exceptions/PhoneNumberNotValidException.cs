@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace Pebtos.GatewayApi.Exceptions
+namespace Pebtos.GatewayApi.Core.Exceptions
 {
     public class PhoneNumberNotValidException : ArgumentException
     {

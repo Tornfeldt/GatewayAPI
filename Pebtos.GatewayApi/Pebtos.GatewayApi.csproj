@@ -35,4 +35,8 @@ If you want to use this wrapper, then go to GatewayAPI.com, create an account, b
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj" />
+  </ItemGroup>
+
 </Project>

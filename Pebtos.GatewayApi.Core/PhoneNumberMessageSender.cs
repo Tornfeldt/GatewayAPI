@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Pebtos.GatewayApi.Core;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Core
 {
     public class PhoneNumberMessageSender : MessageSender
     {

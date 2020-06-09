@@ -8,7 +8,7 @@ namespace System.Text.Json.Serialization
 	/// <see cref="JsonConverterFactory"/> to convert enums to and from strings, respecting <see cref="EnumMemberAttribute"/> decorations. Supports nullable enums.
 	/// Borrowed from https://github.com/Macross-Software/core/tree/develop/ClassLibraries/Macross.Json.Extensions
 	/// </summary>
-	internal class JsonStringEnumMemberConverter : JsonConverterFactory
+	public class JsonStringEnumMemberConverter : JsonConverterFactory
 	{
 		private readonly JsonNamingPolicy? _NamingPolicy;
 		private readonly bool _AllowIntegerValues;

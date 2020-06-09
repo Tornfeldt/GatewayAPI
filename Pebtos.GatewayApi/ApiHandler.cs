@@ -1,6 +1,7 @@
 ﻿using Pebtos.GatewayApi.Exceptions;
 using Pebtos.GatewayApi.Helpers;
-using Pebtos.GatewayApi.JsonConverters;
+using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Core.Helpers;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,6 @@ namespace Pebtos.GatewayApi
         public ApiHandler(ApiSettings settings)
         {
             _settings = settings;
-        }
-
-        public static MessageStatus DeserializeMessageStatus(string json)
-        {
-            return Deserializer.DeserializeMessageStatus(json);
         }
 
         /// <summary>
