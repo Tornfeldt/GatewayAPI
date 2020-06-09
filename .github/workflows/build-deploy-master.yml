@@ -3,8 +3,6 @@ name: Build & deploy
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -38,6 +36,7 @@ jobs:
     - name: Push package to nuget.org
       run: dotnet nuget push **/Pebtos.GatewayApi.*.nupkg
             --skip-duplicate
+            --no-symbols
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
             --source https://api.nuget.org/v3/index.json
     
