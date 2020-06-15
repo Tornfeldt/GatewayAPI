@@ -6,10 +6,25 @@
 
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
+    <Version>0.1.0-beta.1</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Jeppe Tornfeldt Sørensen</Authors>
+    <Company>Jeppe Tornfeldt Sørensen</Company>
+    <Description>This package contains entities and serializers for the SMS gateway GatewayAPI.com. You can use this package directly and build your own logic or you can use the Pebtos.GatewayApi package.
+
+This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

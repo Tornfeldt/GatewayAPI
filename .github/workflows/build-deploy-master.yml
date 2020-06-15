@@ -31,9 +31,17 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: Pack NuGet package
+    - name: Pack Pebtos.GatewayApi.Core
+      run: dotnet pack Pebtos.GatewayApi.Core --configuration Release
+    - name: Push Pebtos.GatewayApi.Core
+      run: dotnet nuget push Pebtos.GatewayApi.Core/**/Pebtos.GatewayApi.Core.*.nupkg
+            --skip-duplicate
+            --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
+            --source https://api.nuget.org/v3/index.json
+            --no-symbols true
+    - name: Pack Pebtos.GatewayApi
       run: dotnet pack Pebtos.GatewayApi --configuration Release
-    - name: Push package to nuget.org
+    - name: Push Pebtos.GatewayApi
       run: dotnet nuget push Pebtos.GatewayApi/**/Pebtos.GatewayApi.*.nupkg
             --skip-duplicate
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
