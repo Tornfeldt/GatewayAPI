@@ -1,4 +1,5 @@
-﻿using Pebtos.GatewayApi.Helpers;
+﻿using Pebtos.GatewayApi.Rest;
+using Pebtos.GatewayApi.Rest.Helpers;
 using System;
 using System.Text.Json;
 using Xunit;

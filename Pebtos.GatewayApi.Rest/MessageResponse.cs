@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Pebtos.GatewayApi.Core;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Rest
 {
     public class MessageResponse
     {

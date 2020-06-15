@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Rest
 {
     public class UsageDetails
     {

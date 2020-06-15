@@ -1,6 +1,6 @@
 using Pebtos.GatewayApi.Core;
 using Pebtos.GatewayApi.Core.Helpers;
-using Pebtos.GatewayApi.Helpers;
+using Pebtos.GatewayApi.Rest.Helpers;
 using System;
 using System.Text.Json;
 using Xunit;
@@ -123,7 +123,7 @@ namespace Pebtos.GatewayApi.Tests
         ""encoding"": ""UTF8""
     }
 ";
-            var message = Helpers.Deserializer.DeserializeMessage(messageJson);
+            var message = Rest.Helpers.Deserializer.DeserializeMessage(messageJson);
 
             AssertionHelpers.AssertTwoJsonStringsAreEqual(messageJson, message.ToJson());
         }
@@ -156,7 +156,7 @@ namespace Pebtos.GatewayApi.Tests
         ""callback_url"": ""https://example.com/cb?foo=bar""
     }
 ";
-            var message = Helpers.Deserializer.DeserializeMessage(messageJson);
+            var message = Rest.Helpers.Deserializer.DeserializeMessage(messageJson);
 
             AssertionHelpers.AssertTwoJsonStringsAreEqual(messageJson, message.ToJson());
         }

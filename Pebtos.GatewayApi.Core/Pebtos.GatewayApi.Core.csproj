@@ -12,7 +12,7 @@
     <Company>Jeppe Tornfeldt Sørensen</Company>
     <Description>This package contains entities and serializers for the SMS gateway GatewayAPI.com. You can use this package directly and build your own logic or you can use the Pebtos.GatewayApi package.
 
-This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.</Description>
+This project is not developed by GatewayAPI.com, but is developed by me because I needed a simple reusable wrapper.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 

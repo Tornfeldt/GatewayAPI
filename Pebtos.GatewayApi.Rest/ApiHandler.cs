@@ -1,5 +1,5 @@
-﻿using Pebtos.GatewayApi.Exceptions;
-using Pebtos.GatewayApi.Helpers;
+﻿using Pebtos.GatewayApi.Rest.Exceptions;
+using Pebtos.GatewayApi.Rest.Helpers;
 using Pebtos.GatewayApi.Core;
 using Pebtos.GatewayApi.Core.Helpers;
 using RestSharp;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Rest
 {
     public class ApiHandler
     {

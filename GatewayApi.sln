@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi", "Pebtos.GatewayApi\Pebtos.GatewayApi.csproj", "{93E47CEA-171E-4779-A339-FD3CEAD4677B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.Rest", "Pebtos.GatewayApi.Rest\Pebtos.GatewayApi.Rest.csproj", "{93E47CEA-171E-4779-A339-FD3CEAD4677B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.Tests", "Pebtos.GatewayApi.Tests\Pebtos.GatewayApi.Tests.csproj", "{5F83BE63-6150-4263-9925-8F3D26E58146}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.ConsoleTester", "Pebtos.GatewayApi.ConsoleTester\Pebtos.GatewayApi.ConsoleTester.csproj", "{7E760BAF-CC7C-42AD-8908-ACD0A8D9AE61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pebtos.GatewayApi.Webhook", "Pebtos.GatewayApi.Webhook\Pebtos.GatewayApi.Webhook.csproj", "{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.Webhook", "Pebtos.GatewayApi.Webhook\Pebtos.GatewayApi.Webhook.csproj", "{9A7EDDB1-BD39-46A1-A0B4-2B7A59D178E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pebtos.GatewayApi.Core", "Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj", "{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pebtos.GatewayApi.Core", "Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj", "{2DA62848-0988-42E9-90E5-EB24DBCDDC3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
