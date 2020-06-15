@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace Pebtos.GatewayApi.Helpers
+namespace Pebtos.GatewayApi.Core.Helpers
 {
-    internal static class JsonSerializerOptionsFactory
+    public static class JsonSerializerOptionsFactory
     {
-        internal static JsonSerializerOptions CreateOptions() => new JsonSerializerOptions
+        public static JsonSerializerOptions CreateOptions() => new JsonSerializerOptions
         {
             IgnoreNullValues = true,
             ReadCommentHandling = JsonCommentHandling.Skip

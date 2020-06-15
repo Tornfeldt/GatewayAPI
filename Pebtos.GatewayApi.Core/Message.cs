@@ -1,11 +1,11 @@
-﻿using Pebtos.GatewayApi.JsonConverters;
+﻿using Pebtos.GatewayApi.Core.JsonConverters;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Core
 {
     public class Message
     {

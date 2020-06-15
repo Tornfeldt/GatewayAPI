@@ -16,7 +16,9 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Tornfeldt/GatewayAPI</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
-    <Description>This package is an API wrapper for the SMS gateway GatewayAPI.com. This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.
+    <Description>This package is an API wrapper for the SMS gateway GatewayAPI.com.
+
+This project is not developed by GatewayAPI.com, but was made by me because I needed a simple reusable wrapper.
 
 If you want to use this wrapper, then go to GatewayAPI.com, create an account, buy some credit and find your private API token.</Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -33,6 +35,10 @@ If you want to use this wrapper, then go to GatewayAPI.com, create an account, b
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj" />
   </ItemGroup>
 
 </Project>

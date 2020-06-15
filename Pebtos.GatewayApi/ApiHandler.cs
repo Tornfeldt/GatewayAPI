@@ -1,6 +1,7 @@
 ﻿using Pebtos.GatewayApi.Exceptions;
 using Pebtos.GatewayApi.Helpers;
-using Pebtos.GatewayApi.JsonConverters;
+using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Core.Helpers;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,6 @@ namespace Pebtos.GatewayApi
         public ApiHandler(ApiSettings settings)
         {
             _settings = settings;
-        }
-
-        public static MessageStatus DeserializeMessageStatus(string json)
-        {
-            return Deserializer.DeserializeMessageStatus(json);
         }
 
         /// <summary>
@@ -55,7 +51,7 @@ namespace Pebtos.GatewayApi
             using var jsonContent = JsonDocument.Parse(content);
 
             var usageJson = jsonContent.RootElement.GetProperty("usage").ToString();
-            var usage = Deserializer.DeserializeUsageDetails(usageJson);
+            var usage = Helpers.Deserializer.DeserializeUsageDetails(usageJson);
 
             var messageIds = jsonContent.RootElement.GetProperty("ids").EnumerateArray().Select(element => element.GetInt64()).ToImmutableArray();
             if (messageIds.Length != messages.Length)

@@ -1,4 +1,6 @@
-﻿using Pebtos.GatewayApi.Helpers;
+﻿using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Helpers;
+using Pebtos.GatewayApi.Core.Helpers;
 using System;
 using System.Text.Json;
 using Xunit;
@@ -43,7 +45,7 @@ namespace Pebtos.GatewayApi.Tests
     ""userref"": ""foobar""
 }
 ";
-            var messageStatus = ApiHandler.DeserializeMessageStatus(messageStatusJson);
+            var messageStatus = Core.Helpers.Deserializer.DeserializeMessageStatus(messageStatusJson);
 
             AssertionHelpers.AssertTwoJsonStringsAreEqual(messageStatusJson, messageStatus.ToJson());
         }

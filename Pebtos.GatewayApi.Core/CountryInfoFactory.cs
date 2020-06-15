@@ -1,12 +1,11 @@
-﻿using Pebtos.GatewayApi.Exceptions;
+﻿using Pebtos.GatewayApi.Core.Exceptions;
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Core
 {
     public static class CountryInfoFactory
     {
@@ -93,10 +92,10 @@ namespace Pebtos.GatewayApi
             throw new PhoneNumberNotValidException(nameof(phoneNumberWithCountryPrefix), phoneNumberWithCountryPrefix);
         }
 
-        private static IImmutableDictionary<string, CountryInfo> CountriesByCountryNameAbbr { get; } = CountryInfos.All.ToImmutableDictionary(x => x.NameAbbreviation);
+        private static IReadOnlyDictionary<string, CountryInfo> CountriesByCountryNameAbbr { get; } = CountryInfos.All.ToDictionary(x => x.NameAbbreviation);
 
-        private static IImmutableDictionary<int, CountryInfo> CountriesByPhonePrefix { get; } = CountryInfos.All
+        private static IReadOnlyDictionary<int, CountryInfo> CountriesByPhonePrefix { get; } = CountryInfos.All
                                                                                                             .Where(x => x.PhonePrefix != CountryInfos.NORTHAMERICA.PhonePrefix || x.NameAbbreviation == CountryInfos.NORTHAMERICA.NameAbbreviation)
-                                                                                                            .ToImmutableDictionary(x => x.PhonePrefix);
+                                                                                                            .ToDictionary(x => x.PhonePrefix);
     }
 }

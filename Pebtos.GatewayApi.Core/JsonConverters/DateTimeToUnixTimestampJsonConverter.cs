@@ -4,9 +4,9 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi.JsonConverters
+namespace Pebtos.GatewayApi.Core.JsonConverters
 {
-    internal class DateTimeToUnixTimestampJsonConverter : JsonConverter<DateTime?>
+    public class DateTimeToUnixTimestampJsonConverter : JsonConverter<DateTime?>
     {
         public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

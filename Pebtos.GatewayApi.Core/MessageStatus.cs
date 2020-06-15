@@ -1,10 +1,9 @@
-﻿using Pebtos.GatewayApi.JsonConverters;
+﻿using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Core.JsonConverters;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Core
 {
     public class MessageStatus
     {
@@ -51,5 +50,11 @@ namespace Pebtos.GatewayApi
         /// </summary>
         [JsonPropertyName("userref")]
         public string UserReference { get; set; }
+
+
+        public static MessageStatus Deserialize(string messageStatusJson)
+        {
+            return Helpers.Deserializer.DeserializeMessageStatus(messageStatusJson);
+        }
     }
 }

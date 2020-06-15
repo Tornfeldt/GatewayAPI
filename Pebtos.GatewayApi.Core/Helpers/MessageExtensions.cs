@@ -1,10 +1,9 @@
-﻿using Pebtos.GatewayApi.JsonConverters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace Pebtos.GatewayApi.Helpers
+namespace Pebtos.GatewayApi.Core.Helpers
 {
     public static class MessageExtensions
     {

@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj" />
+    <ProjectReference Include="..\Pebtos.GatewayApi.Webhook\Pebtos.GatewayApi.Webhook.csproj" />
     <ProjectReference Include="..\Pebtos.GatewayApi\Pebtos.GatewayApi.csproj" />
   </ItemGroup>
 
