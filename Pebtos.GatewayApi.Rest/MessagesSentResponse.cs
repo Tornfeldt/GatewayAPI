@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Pebtos.GatewayApi.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pebtos.GatewayApi
+namespace Pebtos.GatewayApi.Rest
 {
     public class MessagesSentResponse<T>
     {

@@ -1,9 +1,10 @@
 ﻿using Pebtos.GatewayApi.Core;
+using Pebtos.GatewayApi.Rest;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Pebtos.GatewayApi.ConsoleTester
+namespace Pebtos.GatewayApi.Rest.ConsoleTester
 {
     class Program
     {

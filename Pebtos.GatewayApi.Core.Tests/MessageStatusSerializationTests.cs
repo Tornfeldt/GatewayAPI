@@ -1,11 +1,10 @@
 ﻿using Pebtos.GatewayApi.Core;
-using Pebtos.GatewayApi.Helpers;
 using Pebtos.GatewayApi.Core.Helpers;
 using System;
 using System.Text.Json;
 using Xunit;
 
-namespace Pebtos.GatewayApi.Tests
+namespace Pebtos.GatewayApi.Core.Tests
 {
     public class MessageStatusSerializationTests
     {

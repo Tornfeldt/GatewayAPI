@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 
-namespace Pebtos.GatewayApi.Tests
+namespace Pebtos.GatewayApi.Core.Tests
 {
     /// <summary>
     /// Compares <see cref="JsonElement"/>s.

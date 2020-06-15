@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pebtos.GatewayApi.Exceptions
+namespace Pebtos.GatewayApi.Rest.Exceptions
 {
     public class ApiException : Exception
     {

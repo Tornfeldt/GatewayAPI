@@ -39,10 +39,10 @@ jobs:
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
             --source https://api.nuget.org/v3/index.json
             --no-symbols true
-    - name: Pack Pebtos.GatewayApi
-      run: dotnet pack Pebtos.GatewayApi --configuration Release
-    - name: Push Pebtos.GatewayApi
-      run: dotnet nuget push Pebtos.GatewayApi/**/Pebtos.GatewayApi.*.nupkg
+    - name: Pack Pebtos.GatewayApi.Rest
+      run: dotnet pack Pebtos.GatewayApi.Rest --configuration Release
+    - name: Push Pebtos.GatewayApi.Rest
+      run: dotnet nuget push Pebtos.GatewayApi.Rest/**/Pebtos.GatewayApi.Rest.*.nupkg
             --skip-duplicate
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
             --source https://api.nuget.org/v3/index.json
