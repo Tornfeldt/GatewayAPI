@@ -1,5 +1,4 @@
 ﻿using Pebtos.GatewayApi.Rest.Exceptions;
-using Pebtos.GatewayApi.Rest.Helpers;
 using Pebtos.GatewayApi.Core;
 using Pebtos.GatewayApi.Core.Helpers;
 using RestSharp;
@@ -51,7 +50,7 @@ namespace Pebtos.GatewayApi.Rest
             using var jsonContent = JsonDocument.Parse(content);
 
             var usageJson = jsonContent.RootElement.GetProperty("usage").ToString();
-            var usage = Helpers.Deserializer.DeserializeUsageDetails(usageJson);
+            var usage = Deserializer.DeserializeUsageDetails(usageJson);
 
             var messageIds = jsonContent.RootElement.GetProperty("ids").EnumerateArray().Select(element => element.GetInt64()).ToImmutableArray();
             if (messageIds.Length != messages.Length)

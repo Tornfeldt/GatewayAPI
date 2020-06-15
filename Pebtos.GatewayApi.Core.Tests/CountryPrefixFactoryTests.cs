@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace Pebtos.GatewayApi.Tests
+namespace Pebtos.GatewayApi.Core.Tests
 {
     public class CountryPrefixFactoryTests
     {

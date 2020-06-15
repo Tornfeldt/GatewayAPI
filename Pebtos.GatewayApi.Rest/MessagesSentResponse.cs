@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pebtos.GatewayApi.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

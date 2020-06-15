@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pebtos.GatewayApi.Core\Pebtos.GatewayApi.Core.csproj" />
-    <ProjectReference Include="..\Pebtos.GatewayApi.Rest\Pebtos.GatewayApi.Rest.csproj" />
-    <ProjectReference Include="..\Pebtos.GatewayApi.Webhook\Pebtos.GatewayApi.Webhook.csproj" />
   </ItemGroup>
 
 </Project>

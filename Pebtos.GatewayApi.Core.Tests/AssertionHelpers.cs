@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Xunit;
 
-namespace Pebtos.GatewayApi.Tests
+namespace Pebtos.GatewayApi.Core.Tests
 {
     public static class AssertionHelpers
     {

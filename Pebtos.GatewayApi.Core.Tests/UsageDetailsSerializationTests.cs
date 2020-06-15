@@ -1,10 +1,9 @@
-﻿using Pebtos.GatewayApi.Rest;
-using Pebtos.GatewayApi.Rest.Helpers;
+﻿using Pebtos.GatewayApi.Core.Helpers;
 using System;
 using System.Text.Json;
 using Xunit;
 
-namespace Pebtos.GatewayApi.Tests
+namespace Pebtos.GatewayApi.Core.Tests
 {
     public class UsageDetailsSerializationTests
     {
