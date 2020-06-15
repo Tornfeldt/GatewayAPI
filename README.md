@@ -1,5 +1,8 @@
 ![.NET Core](https://github.com/Tornfeldt/GatewayAPI/workflows/Build%20&%20deploy/badge.svg?branch=master)
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Pebtos.GatewayAPI)
+<br/>
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Pebtos.GatewayApi.Core?label=NuGet%20Pebtos.GatewayApi.Core)
+<br/>
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Pebtos.GatewayApi.Rest?label=NuGet%20Pebtos.GatewayApi.Rest)
 
 # GatewayAPI
 API handler for SMS gateway GatewayAPI.
