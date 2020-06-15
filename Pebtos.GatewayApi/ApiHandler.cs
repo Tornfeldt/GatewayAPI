@@ -51,7 +51,7 @@ namespace Pebtos.GatewayApi
             using var jsonContent = JsonDocument.Parse(content);
 
             var usageJson = jsonContent.RootElement.GetProperty("usage").ToString();
-            var usage = Deserializer.DeserializeUsageDetails(usageJson);
+            var usage = Helpers.Deserializer.DeserializeUsageDetails(usageJson);
 
             var messageIds = jsonContent.RootElement.GetProperty("ids").EnumerateArray().Select(element => element.GetInt64()).ToImmutableArray();
             if (messageIds.Length != messages.Length)

@@ -123,7 +123,7 @@ namespace Pebtos.GatewayApi.Tests
         ""encoding"": ""UTF8""
     }
 ";
-            var message = Deserializer.DeserializeMessage(messageJson);
+            var message = Helpers.Deserializer.DeserializeMessage(messageJson);
 
             AssertionHelpers.AssertTwoJsonStringsAreEqual(messageJson, message.ToJson());
         }
@@ -156,7 +156,7 @@ namespace Pebtos.GatewayApi.Tests
         ""callback_url"": ""https://example.com/cb?foo=bar""
     }
 ";
-            var message = Deserializer.DeserializeMessage(messageJson);
+            var message = Helpers.Deserializer.DeserializeMessage(messageJson);
 
             AssertionHelpers.AssertTwoJsonStringsAreEqual(messageJson, message.ToJson());
         }

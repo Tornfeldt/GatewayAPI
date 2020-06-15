@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace Pebtos.GatewayApi.Webhook.Helpers
+namespace Pebtos.GatewayApi.Core.Helpers
 {
     public class Deserializer
     {

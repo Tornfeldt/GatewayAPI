@@ -3,7 +3,7 @@ using Pebtos.GatewayApi.Core.JsonConverters;
 using System;
 using System.Text.Json.Serialization;
 
-namespace Pebtos.GatewayApi.Webhook
+namespace Pebtos.GatewayApi.Core
 {
     public class MessageStatus
     {
