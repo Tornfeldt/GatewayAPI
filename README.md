@@ -19,6 +19,7 @@ API handler for SMS gateway GatewayAPI.
 - [Usage](#usage)
   - [Sending SMS](#sending-sms)
   - [Receiving message status](#receiving-message-status)
+  - [Authenticating webhook requests in ASP.NET Core 3.1](#authenticating-webhook-requests-in-aspnet-core-31)
 
 
 # Introduction
@@ -130,6 +131,37 @@ public async Task<IActionResult> MessageStatus([FromBody] MessageStatus messageS
 {
     // Do stuff like matching sent messages with either messageStatus.MessageId or messageStatus.UserReference and messageStatus.Recipient
 
+    return Ok();
+}
+```
+
+
+## Authenticating webhook requests in ASP.NET Core 3.1
+When enabling webhooks in the Gateway API administration you can add a secret (called token in the administration) to add authentication to all requests from Gateway API to your application. As an example we will now use the secret "a_very_long_and_complicated_secret".
+
+To add authentication, you need to add two things. First, we need to setup the webhook authentication in, which is usually done in `Startup.cs`:
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    var jwtSecret = "a_very_long_and_complicated_secret"; // Get this from settings
+
+    services.SetupGatewayApiWebhook(options =>
+    {
+        options.JwtSecret = jwtSecret;
+    });
+
+    // Setup the rest of the application ...
+}
+```
+
+The second thing we need to add is the `GatewayApiWebhookAttribute` to the action(s) which Gateway API will call:
+```C#
+[GatewayApiWebhook]
+[HttpPost("messageStatus")]
+public async Task<IActionResult> MessageStatus([FromBody] MessageStatus messageStatus)
+{
+    // We are now sure that it is actually Gateway API who called this action.
+    // Do stuff ...
     return Ok();
 }
 ```
