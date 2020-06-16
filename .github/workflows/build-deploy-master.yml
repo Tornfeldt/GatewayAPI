@@ -47,4 +47,12 @@ jobs:
             --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
             --source https://api.nuget.org/v3/index.json
             --no-symbols true
+    - name: Pack Pebtos.GatewayApi.Webhook
+      run: dotnet pack Pebtos.GatewayApi.Webhook --configuration Release
+    - name: Push Pebtos.GatewayApi.Webhook
+      run: dotnet nuget push Pebtos.GatewayApi.Webhook/**/Pebtos.GatewayApi.Webhook.*.nupkg
+            --skip-duplicate
+            --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
+            --source https://api.nuget.org/v3/index.json
+            --no-symbols true
     
